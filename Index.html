@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+  <h2>Crear tabla de Alumnos</h2>
+  <form action="crea_tabla_001.php" method="post">
+    <input type="submit" value="Crear Tabla Alumnos">
+  </form>
+  <h2>Registro de Alumnos</h2>
+  <form id="form" method="post" action="crea_usuario_001.php">
+    <label for="NIF">NIF:</label>
+    <input type="text" name="NIF" id="NIF" required>
+    <br>
+    <br>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+    <br>
+    <br>
+    <label for="primerApellido">Primer Apellido:</label>
+    <input type="text" name="primerApellido" id="primerApellido" required>
+    <br>
+    <br>
+    <label for="segundoApellido">Segundo Apellido:</label>
+    <input type="text" name="segundoApellido" id="segundoApellido" required>
+    <br>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" required>
+    <br>
+    <br>
+    <input type="submit" value="Guardar">
+  </form>
+  <h2>Ver listado de Alumnos</h2>
+  <label>Si usted no pone ningún indicio para filtrar,se mostrarán todos los alumnos</label>
+  <br>
+  <br>
+  <form action="lista_usuarios_001.php" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre">
+    <br>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email">
+    <br>
+    <br>
+    <input type="submit" value="Filtrar">
+</form>
+<h2>Editar Alumno</h2>
+<form action="edita_usuario_001.php" method="post">
+  <p>Indique el NIF del Alumno a Editar</p>
+  <label for="nif">NIF:</label>
+  <input type="text" name="nif" id="nif" required>
+  <br>
+  <br>
+  <p>Datos a Editar</p>
+  <label for="nombre">Nombre:</label>
+  <input type="text" name="nombre" id="nombre">
+  <br>
+  <br>
+  <label for="email">Email:</label>
+  <input type="text" name="email" id="email">
+  <br>
+  <br>
+  <input type="submit" value="Editar" name="editar">
+</form>
+
+</body>
+</html>
