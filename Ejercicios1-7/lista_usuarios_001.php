@@ -1,6 +1,6 @@
 <?php
     // Conexión a la base de datos
-    $conn = mysqli_connect("localhost", "root", "", "alumnos");
+    $conn = mysqli_connect("localhost", "root", "", "test");
 
     // Inicializar variables para los valores de búsqueda
     $nombre = '';
@@ -15,7 +15,7 @@
     }
 
     // Consulta para obtener todos los alumnos
-    $query = "SELECT * FROM alumnos";
+    $query = "SELECT * FROM usuarios";
     if(!empty($nombre) || !empty($email)) {
         $query .= " WHERE ";
     }
@@ -47,8 +47,6 @@
         echo "<td>" . $row['primerApellido'] . "</td>";
         echo "<td>" . $row['segundoApellido'] . "</td>";
         echo "<td>" . $row['email'] . "</td>";
-        $edit_button = "<button type='button' class='btn btn-info' data-toggle='modal' data-target='#editModal' data-nif='".$row['NIF']."' data-nombre='".$row['Nombre']."' data-email='".$row['email']."'>Editar</button>";
-        echo "<td>" .$edit_button . "</td";
         echo "</tr>";
         }
         echo "</table>";

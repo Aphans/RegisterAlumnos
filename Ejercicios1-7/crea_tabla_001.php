@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "alumnos";
+    $dbname = "test";
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // SQL statement to create table
-    $sql = "CREATE TABLE alumnos (
+    $sql = "CREATE TABLE usuarios (
         NIF VARCHAR(10) PRIMARY KEY,
         Nombre VARCHAR(10) NOT NULL,
         primerApellido VARCHAR(10) NOT NULL,

@@ -20,7 +20,7 @@ class Alumno{
      }
      static function getNumeroAlumnos(){
         global $numeroAlumnos;
-        echo 'Hay '.$numeroAlumnos.' alumnos';
+        echo 'Hay'.$numeroAlumnos .' alumnos';
      }
      function pinta_Alumno() {
 		echo "Nif:$this->nif";

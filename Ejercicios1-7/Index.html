@@ -9,7 +9,7 @@
 <body>
   <h2>Crear tabla de Alumnos</h2>
   <form action="crea_tabla_001.php" method="post">
-    <input type="submit" value="Crear Tabla Alumnos">
+    <input type="submit" value="Crear Tabla Usuarios">
   </form>
   <h2>Registro de Alumnos</h2>
   <form id="form" method="post" action="crea_usuario_001.php">
@@ -19,6 +19,10 @@
     <br>
     <label for="nombre">Nombre:</label>
     <input type="text" name="nombre" id="nombre" required>
+    <br>
+    <br>
+    <label for="passwd">Contraseña:</label>
+    <input type="password" name="passwd" id="passwd" required>
     <br>
     <br>
     <label for="primerApellido">Primer Apellido:</label>
@@ -68,6 +72,11 @@
   <br>
   <input type="submit" value="Editar" name="editar">
 </form>
-
+<h2>Eliminar ALumno</h2>
+<form action="elimina_usuario_001.php" method="post">
+  <label for="buscar">Ingresa el valor del campo por el cual deseas buscar y eliminar al usuario (NIF, Nombre o Email):</label>
+  <input type="text" id="buscar" name="buscar">
+  <input type="submit" value="Eliminar usuario">
+</form>
 </body>
 </html>

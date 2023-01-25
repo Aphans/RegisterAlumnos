@@ -1,0 +1,8 @@
+Si pones en el nombre OR '1'='1
+y en la comntraseña cualquier valor, se inicia sesión a la fueza.
+
+Ya que siempre se estará ejecutando la siguiente sentencia SQL:
+
+SELECT * FROM usuario WHERE nombre = '' OR '1'='1' AND passw = 'valor_introducido_en_el_campo_contraseña'
+
+Para solucionar esto se encripta la contraseña

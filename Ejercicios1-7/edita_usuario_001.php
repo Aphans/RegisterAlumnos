@@ -1,6 +1,6 @@
 <?php
     // Conexión a la base de datos
-    $conn = mysqli_connect("localhost", "root", "", "alumnos");
+    $conn = mysqli_connect("localhost", "root", "", "test");
 
     // Verificar si se ha enviado el formulario
     if(isset($_POST['editar'])) {
@@ -10,7 +10,7 @@
         $email = $_POST['email'];
 
         // Crear consulta de actualización
-        $query = "UPDATE alumnos SET";
+        $query = "UPDATE usuarios SET";
         if(!empty($nombre)) {
             $query .= " nombre = '$nombre',";
         }
@@ -31,7 +31,7 @@
     }
     echo "<br>";
     // Consulta para obtener todos los usuarios
-    $query = "SELECT * FROM alumnos";
+    $query = "SELECT * FROM usuarios";
     $result = mysqli_query($conn, $query);
 
     // Mostrar resultados en una tabla

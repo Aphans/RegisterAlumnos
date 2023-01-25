@@ -1,8 +1,9 @@
 <?php 
+ini_set('display_errors', 1);
 //Importo la clase Alumno
 require_once("ClassAlumno.php");
 //Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "alumnos");
+$conexion = mysqli_connect("localhost", "root", "", "test");
 //Comprobamos la conexión
 if (!$conexion) {
     die("Conexión fallida: " . mysqli_connect_error());
@@ -14,9 +15,14 @@ $nombre = $_POST['nombre'];
 $primerApellido = $_POST['primerApellido'];
 $segundoApellido = $_POST['segundoApellido'];
 $email = $_POST['email'];
+$passwd = $_POST['passwd'];
+
+// Encriptar la contraseña
+$salt = md5($passwd);
+$pasword_encript = crypt($passwd, $salt);
 
 // Insertar los datos en la tabla
-$sql = "INSERT INTO alumnos (NIF, Nombre, primerApellido, segundoApellido,email) VALUES ('$NIF','$nombre', '$primerApellido', '$segundoApellido','$email')";
+$sql = "INSERT INTO usuarios (NIF, Nombre,passw, primerApellido, segundoApellido,email) VALUES ('$NIF','$nombre','$pasword_encript','$primerApellido', '$segundoApellido','$email')";
 
 //Comprobar si el registro es realizado con exito
 if ($conexion->query($sql) === TRUE) {
@@ -27,7 +33,7 @@ if ($conexion->query($sql) === TRUE) {
 echo "<br>";
 echo "<br>";
 //Consulta para seleccionar todos los alumnos
-$sql = "SELECT nif, nombre, primerapellido, segundoapellido FROM alumnos";
+$sql = "SELECT nif, nombre, primerapellido, segundoapellido FROM usuarios";
 $resultado = mysqli_query($conexion, $sql);
 //Creamos variables para almacenar los resultados obtenidos
 $nifObtenido = "";
